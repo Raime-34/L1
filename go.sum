@@ -1,0 +1,6 @@
+github.com/ghetzel/go-stockutil v1.11.4 h1:hg+YkgB2KJD6JBiZkSlzN53ACnhuO3NKVKf2neenbew=
+github.com/ghetzel/go-stockutil v1.11.4/go.mod h1:xFqgbfU1FVbv7ppdKtnNw2HOistfiQaB6bZOv60BNSg=
+golang.org/x/exp v0.0.0-20231006140011-7918f672742d h1:jtJma62tbqLibJ5sFQz8bKtEM8rJBtfilJ2qTU199MI=
+golang.org/x/exp v0.0.0-20231006140011-7918f672742d/go.mod h1:ldy0pHrwJyGW56pPQzzkH36rKxoZW1tw7ZJpeKx+hdo=
+launchpad.net/tomb v0.0.0-20140529072043-000000000018 h1:FKZEDyGErCWXdYkBcatiuhFIVmFXa4IX63x9qhyDAgA=
+launchpad.net/tomb v0.0.0-20140529072043-000000000018/go.mod h1:w6+8ELEkBc7BXqHIC1HxPn+1oMBGALPhRpM4jkUYWJM=
