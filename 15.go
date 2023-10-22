@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 )
 
 // Как я понял проблема заключается в резмере строки
@@ -26,7 +27,7 @@ func someFunc() {
 }
 
 func main() {
-	someFunc()
+	someFunc2()
 }
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -35,4 +36,32 @@ func createHugeString(n int64) {
 	for n > int64(len(v)) {
 		v += string(letters[rand.Intn(len(letters))])
 	}
+}
+
+func someFunc2() {
+
+	file, err := os.OpenFile("bruh.txt", os.O_RDWR|os.O_APPEND, os.ModeAppend) // Открываем файл для записи в конец и чтения
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	n := 1 << 20
+	for i := 0; i < n; i++ {
+		file.WriteString(string(letters[rand.Intn(len(letters))])) // Записываем сивол в конец
+	}
+
+	var buff = make([]byte, 100) // Слайс, в который в дальнейшем закинем данные из файла
+
+	_, err2 := file.Seek(0, 0) // Переносим "курсор" в самое начало файла
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+	n, err3 := file.Read(buff) // Читаем данные и закидываем их в слайс
+	if err3 != nil {
+		fmt.Println(err3)
+	}
+
+	fmt.Println(n, string(buff))
+	file.Close()
+
 }
